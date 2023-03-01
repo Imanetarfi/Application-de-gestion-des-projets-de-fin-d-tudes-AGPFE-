@@ -6,9 +6,14 @@ const App = () => {
     const handleChange = (e) => {
         setname(prev=>({...prev, [e.target.name]: e.target.value}))
     }
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault() 
-        
+        try {
+          const data = JSON.stringify(name)
+          await axios.post("http://localhost/backend/controllers/DBConnect.php", data)
+        } catch (err) {
+          console.log(err)
+        }
     }
   return (
     <>
