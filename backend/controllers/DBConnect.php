@@ -1,3 +1,3 @@
 <?php 
-//database connection
+//API DB interactions
 echo "Hello Backend"; 
