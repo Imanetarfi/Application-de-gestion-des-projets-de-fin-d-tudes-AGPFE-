@@ -1,4 +1,4 @@
-# AGPFE
+# ![Logo](https://img.icons8.com/ios-filled/50/40C057/student-center.png)AGPFE
 
 AGPFE (Application de gestion des projets de fin d'études) est une plateforme de dépôt et de gestion de projets de fin d'études conçue pour faciliter la collaboration entre les étudiants et les encadrants. Les étudiants peuvent déposer leurs projets, former des binômes, envoyer plusieurs versions jusqu'à validation par l'encadrant, et préciser les dates de passage devant le jury. L'application permet également aux membres du jury d'évaluer les projets et de conserver l'historique de chaque version. AGPFE offre ainsi une solution pratique et efficace pour la gestion des projets de fin d'études.
 
