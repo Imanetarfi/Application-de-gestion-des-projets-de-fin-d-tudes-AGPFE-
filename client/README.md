@@ -2,11 +2,11 @@
 
 AGPFE (Application de gestion des projets de fin d'études) est une plateforme de dépôt et de gestion de projets de fin d'études conçue pour faciliter la collaboration entre les étudiants et les encadrants. Les étudiants peuvent déposer leurs projets, former des binômes, envoyer plusieurs versions jusqu'à validation par l'encadrant, et préciser les dates de passage devant le jury. L'application permet également aux membres du jury d'évaluer les projets et de conserver l'historique de chaque version. AGPFE offre ainsi une solution pratique et efficace pour la gestion des projets de fin d'études.
 
-# ![Rocket Ship](https://img.icons8.com/ios-filled/30/21a366/rocket.png) Départ
+# ![Rocket Ship](https://img.icons8.com/ios-filled/30/21a366/rocket.png) Départ: 
 
 Ces instructions vous permettront d'obtenir une copie du projet opérationnel sur votre ordinateur local à des fins de développement et de test.
 
-## ![Prerequisites](https://img.icons8.com/glyph-neue/30/21a366/requirements.png) Conditions préalables
+## ![Prerequisites](https://img.icons8.com/glyph-neue/30/21a366/requirements.png) Conditions Préalables: 
 
 ![Git](https://img.icons8.com/color/30/null/git.png) Git
 
@@ -16,7 +16,7 @@ Ces instructions vous permettront d'obtenir une copie du projet opérationnel su
 
 ![Bash](https://img.icons8.com/color/30/null/command-line.png) Bash
 
-## ![Installation](https://img.icons8.com/external-sbts2018-solid-sbts2018/30/21a366/external-install-basic-ui-elements-2.3-sbts2018-solid-sbts2018.png) Installation
+## ![Installation](https://img.icons8.com/external-sbts2018-solid-sbts2018/30/21a366/external-install-basic-ui-elements-2.3-sbts2018-solid-sbts2018.png) Installation: 
 
 ### 1. Clonez le dépôt:
 
@@ -51,6 +51,8 @@ Le site sera désormais disponible sur http://localhost:3000.
 ![CSS3](https://img.icons8.com/color/30/null/css3.png) CSS3
 
 ![Javascript](https://img.icons8.com/color/30/null/javascript--v1.png) ES2022
+
+![PHP](https://img.icons8.com/offices/30/null/php-logo.png) PHP
 
 ### + Design:
 
