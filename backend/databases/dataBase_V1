@@ -1,4 +1,3 @@
-
 /*la creation du table enseignant*/
 
 CREATE TABLE `gestion_projects`.`enseignant` (

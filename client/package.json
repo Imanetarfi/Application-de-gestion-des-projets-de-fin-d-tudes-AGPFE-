@@ -1,5 +1,8 @@
 {
   "name": "agpfe",
+  "author": "Webcinq",
+  "description": "AGPFE est une plateforme de gestion de projets de fin d'études qui facilite la collaboration entre les étudiants et les encadrants.",
+  "license": "No license",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
