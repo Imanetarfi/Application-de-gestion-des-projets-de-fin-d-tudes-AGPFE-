@@ -66,6 +66,8 @@ Le site sera désormais disponible sur http://localhost:3000.
 
 * scss
 
+* Icons by <a href="https://icons8.com">Icons8</a>
+
 ## ![collaborateurs](https://img.icons8.com/pastel-glyph/30/40C057/groups--v4.png) Collaborateurs: 
 
 ### Ilham Aitsaid
