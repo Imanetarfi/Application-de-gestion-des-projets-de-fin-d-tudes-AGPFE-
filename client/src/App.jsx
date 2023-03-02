@@ -17,16 +17,16 @@ const App = () => {
           console.log(err)
         }
     }
-    const fetchUsers = async () => {
-      try {
-        const response = await axios.get("http://localhost/backend/controllers/DBConnect.php")
-        setusers(response.data) 
-        loading.current = false
-      } catch (err) {
-        console.log(err)
-      }
-    };
     useEffect(() => {
+      const fetchUsers = async () => {
+        try {
+          const response = await axios.get("http://localhost/backend/controllers/DBConnect.php")
+          setusers(response.data) 
+          loading.current = false
+        } catch (err) {
+          console.log(err)
+        }
+      }
       fetchUsers();
     }, []);
   return (
