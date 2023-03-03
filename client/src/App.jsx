@@ -1,46 +1,63 @@
-import React, {useState,useEffect,useRef} from 'react'
+import React, {useState,useEffect} from 'react'
 import axios from "axios"
 
 const App = () => {
-    const [name, setname] = useState()
+    const [data, setdata] = useState()
     const [users, setusers] = useState([])
-    const loading = useRef(true)
+    const [isloading, setisloading] = useState(false)
     const handleChange = (e) => {
-        setname(prev=>({...prev, [e.target.name]: e.target.value}))
+        setdata(prev=>({...prev, [e.target.name]: e.target.value}))
+    }
+    const fetchUsers = async () => {
+      setisloading(true)
+      try {
+        const response = await axios.get("http://localhost/backend/controllers/DBConnect.php")
+        setusers(response.data) 
+      } catch (err) {
+        console.log(err)
+      }
+      setisloading(false)
     }
     const handleSubmit = async(e) => {
-        e.preventDefault() 
-        try {
-          const data = JSON.stringify(name)
-          await axios.post("http://localhost/backend/controllers/DBConnect.php", data)
-        } catch (err) {
-          console.log(err)
-        }
+      e.preventDefault() 
+      try {
+        const request = JSON.stringify(data)
+        await axios.post("http://localhost/backend/controllers/DBConnect.php", request)
+      } catch (err) {
+        console.log(err)
+      }
+      fetchUsers()
+  }
+    const handleDelete = async(id) => {
+      try {
+        await axios.delete("http://localhost/backend/controllers/DBConnect.php/" + id)
+      } catch (err) {
+        console.log(err)
+      }
+      fetchUsers(); 
     }
     useEffect(() => {
-      const fetchUsers = async () => {
-        try {
-          const response = await axios.get("http://localhost/backend/controllers/DBConnect.php")
-          setusers(response.data) 
-          loading.current = false
-        } catch (err) {
-          console.log(err)
-        }
-      }
       fetchUsers();
     }, []);
   return (
     <>
     <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
-        <input id='name' name='name' onChange={handleChange}></input>
+        <label htmlFor="nom">Nom:</label>
+        <input id='nom' name='nom' onChange={handleChange}></input>
+        <label htmlFor="prenom">Prenom:</label>
+        <input id='prenom' name='prenom' onChange={handleChange}></input>
+        <label htmlFor="email">Email:</label>
+        <input id='email' name='email' onChange={handleChange}></input>
+        <label htmlFor="classement">Classement:</label>
+        <input id='classement' name='classement' onChange={handleChange}></input>
         <button type='submit'>Send</button>
     </form>
-    <div>{loading.current ? <div>Loading...</div> : users.map((user) => {
-      const {id,fname,lname,password} = user
-      return (
-        <div key={id}>
-        {fname + lname + password}
+    <div>{isloading ? <div>Loading...</div> : users.map((user) => {
+      const {idEtud,nom,prenom,email,classement} = user
+      return ( 
+        <div key={idEtud}>
+        {idEtud + nom + prenom + email + classement}
+        <button onClick={() => {handleDelete(idEtud)}}>Delete</button>
       </div>
       )
     })}</div>

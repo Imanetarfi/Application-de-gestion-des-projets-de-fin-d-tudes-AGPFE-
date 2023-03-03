@@ -60,6 +60,7 @@ CREATE TABLE `gestion_projects`.`etudiant` (
   `idEtud` INT NOT NULL AUTO_INCREMENT,
   `nom` VARCHAR(45) NULL,
   `prenom` VARCHAR(45) NULL,
+  `email` VARCHAR(45) NULL, 
   `password` VARCHAR(45) NULL,
   `spécialité` VARCHAR(45) NULL,
   `classement` INT NULL,
