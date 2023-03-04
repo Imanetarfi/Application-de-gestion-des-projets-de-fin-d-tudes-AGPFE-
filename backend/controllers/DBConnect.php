@@ -3,24 +3,48 @@
 require "../config/pdo.php"; 
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
+header("Access-Control-Allow-Methods: *"); 
 header("Content-Type: application/json"); 
 
 $method = $_SERVER["REQUEST_METHOD"]; 
-
-switch ($method) {
+switch($method) {
     case "POST": 
-    $data_json = file_get_contents("php://input");
-    $data = json_decode(($data_raw)); 
-    if ($data) {
-        $sql="INSERT INTO users(fname) VALUES(:fname)"; 
-        $stmt = $conn->prepare($sql);    
-        echo (($stmt->execute([":fname"=>$data->name])) ? "data inserted successfuly" : "error");
+    $data_raw = file_get_contents("php://input"); 
+    $data = json_decode($data_raw);  
+    if($data) {
+        $sql = "INSERT INTO etudiant(nom,prenom,email,classement) VALUES(:nom,:prenom,:email,:classement)"; 
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([":nom"=>$data->nom, ":prenom"=>$data->prenom, ":email"=>$data->email, ":classement"=>$data->classement]);
     }
+    break; 
     case "GET": 
-        $sql="SELECT * from users"; 
+        $sql="SELECT idEtud,nom,prenom,email,classement FROM etudiant"; 
         $stmt = $conn->prepare($sql); 
         $stmt->execute(); 
-        $data = $stmt->fetchAll((PDO::FETCH_OBJ)); 
-        $data_json = json_encode($data_raw); 
-        echo $data; 
+        $data_raw = $stmt->fetchAll((PDO::FETCH_OBJ)); 
+        $data = json_encode($data_raw); 
+        echo $data;
+        break; 
+    case "PUT": 
+        $id = explode("/", $_SERVER["REQUEST_URI"]); 
+        if (isset($id[4]) && is_numeric($id[4])) {
+            echo "Hello"; 
+        $data_raw = file_get_contents("php://input"); 
+        $data = json_decode($data_raw);
+        $sql = "UPDATE etudiant SET nom=:nom,prenom=:prenom,email=:email,classement=:classement WHERE id=:id"; 
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([":id"=>$id, ":nom"=>$data->nom,":prenom"=>$data->prenom,":email"=>$data->email,":classement"=>$data->classement]);
+        }
+        break; 
+    case "DELETE": 
+        $id = explode("/", $_SERVER["REQUEST_URI"]);
+        if (isset($id[4]) && is_numeric($id[4])) {
+            $sql = "DELETE from etudiant WHERE id=:id"; 
+            $stmt = $conn->prepare($sql);
+            $stmt->execute([":id"=>$id]);
+            }
+            break; 
 }
+
+
+
