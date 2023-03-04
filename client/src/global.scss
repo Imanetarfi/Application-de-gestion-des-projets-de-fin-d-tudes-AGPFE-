@@ -1,8 +1,3 @@
-// Sass Variables and functions Here: 
-$background-color: white; 
-@mixin randomcss {
-//random css properties
-}
 * {
     padding: 0;
     margin: 0;
@@ -14,8 +9,7 @@ $background-color: white;
 // Add styles Here: 
 
 body {
-    background-color: $background-color;
-    @include randomcss; 
+    background-color: white;
 }
 
 

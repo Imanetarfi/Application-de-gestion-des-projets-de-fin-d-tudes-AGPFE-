@@ -4,5 +4,6 @@ import App from "./App"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap"
 import "./global.scss"
+
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(<App/>)
