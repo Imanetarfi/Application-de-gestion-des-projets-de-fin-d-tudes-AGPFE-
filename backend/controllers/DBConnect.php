@@ -26,23 +26,22 @@ switch($method) {
         echo $data;
         break; 
     case "PUT": 
-        $id = explode("/", $_SERVER["REQUEST_URI"]); 
-        if (isset($id[4]) && is_numeric($id[4])) {
-            echo "Hello"; 
+        $id = explode("/", $_SERVER["REQUEST_URI"])[4]; 
+        if (isset($id) && is_numeric($id)) {
         $data_raw = file_get_contents("php://input"); 
         $data = json_decode($data_raw);
-        $sql = "UPDATE etudiant SET nom=:nom,prenom=:prenom,email=:email,classement=:classement WHERE id=:id"; 
+        $sql = "UPDATE etudiant SET nom=:nom,prenom=:prenom,email=:email,classement=:classement WHERE idEtud=:id"; 
         $stmt = $conn->prepare($sql);
-        $stmt->execute([":id"=>$id, ":nom"=>$data->nom,":prenom"=>$data->prenom,":email"=>$data->email,":classement"=>$data->classement]);
+        $stmt->execute([":id"=>$id, ":nom"=>$data->nom,":prenom"=>$data->prenom,":email"=>$data->email,":classement"=>$data->classement, ":id"=>$id]);
         }
         break; 
     case "DELETE": 
-        $id = explode("/", $_SERVER["REQUEST_URI"]);
-        if (isset($id[4]) && is_numeric($id[4])) {
-            $sql = "DELETE from etudiant WHERE id=:id"; 
+        $id = explode("/", $_SERVER["REQUEST_URI"])[4];
+        if (isset($id) && is_numeric($id)) {
+            $sql = "DELETE from etudiant WHERE idEtud=:id"; 
             $stmt = $conn->prepare($sql);
             $stmt->execute([":id"=>$id]);
-            }
+        }
             break; 
 }
 

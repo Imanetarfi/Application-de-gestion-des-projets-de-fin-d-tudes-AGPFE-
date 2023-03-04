@@ -37,6 +37,7 @@ const App = () => {
       }
     }
     savebtn.current.textContent = "Send"
+    fetchUsers()
   }
     const handleDelete = async(id) => {
       try {
