@@ -1,10 +1,12 @@
-import React, {useState,useEffect} from 'react'
+import React, {useState,useEffect,useRef} from 'react'
 import axios from "axios"
 
 const App = () => {
     const [data, setdata] = useState()
     const [users, setusers] = useState([])
     const [isloading, setisloading] = useState(false)
+    const savebtn = useRef()
+    const user_id = useRef()
     const handleChange = (e) => {
         setdata(prev=>({...prev, [e.target.name]: e.target.value}))
     }
@@ -20,13 +22,21 @@ const App = () => {
     }
     const handleSubmit = async(e) => {
       e.preventDefault() 
+      const request = JSON.stringify(data)
+      if (savebtn.current.textContent === "Send"){ 
       try {
-        const request = JSON.stringify(data)
         await axios.post("http://localhost/backend/controllers/DBConnect.php", request)
       } catch (err) {
         console.log(err)
       }
-      fetchUsers()
+    } else {
+      try {   
+        await axios.put("http://localhost/backend/controllers/DBConnect.php/" + user_id.current, request) 
+      }catch (err) {
+        console.log(err)
+      }
+    }
+    savebtn.current.textContent = "Send"
   }
     const handleDelete = async(id) => {
       try {
@@ -34,10 +44,10 @@ const App = () => {
       } catch (err) {
         console.log(err)
       }
-      fetchUsers(); 
+      fetchUsers()
     }
     useEffect(() => {
-      fetchUsers();
+      fetchUsers()
     }, []);
   return (
     <>
@@ -50,13 +60,17 @@ const App = () => {
         <input id='email' name='email' onChange={handleChange}></input>
         <label htmlFor="classement">Classement:</label>
         <input id='classement' name='classement' onChange={handleChange}></input>
-        <button type='submit'>Send</button>
+        <button ref={savebtn} type='submit'>Send</button>
     </form>
     <div>{isloading ? <div>Loading...</div> : users.map((user) => {
       const {idEtud,nom,prenom,email,classement} = user
       return ( 
         <div key={idEtud}>
         {idEtud + nom + prenom + email + classement}
+        <button onClick={() => {
+          user_id.current = idEtud
+          savebtn.current.textContent = "Update"
+          }}>Edit</button>
         <button onClick={() => {handleDelete(idEtud)}}>Delete</button>
       </div>
       )
