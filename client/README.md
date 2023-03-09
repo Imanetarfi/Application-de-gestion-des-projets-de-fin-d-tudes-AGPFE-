@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# ![Logo](https://img.icons8.com/ios-filled/50/40C057/student-center.png) AGPFE
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+AGPFE (Application de gestion des projets de fin d'études) est une plateforme de dépôt et de gestion de projets de fin d'études conçue pour faciliter la collaboration entre les étudiants et les encadrants. Les étudiants peuvent déposer leurs projets, former des binômes, envoyer plusieurs versions jusqu'à validation par l'encadrant, et préciser les dates de passage devant le jury. L'application permet également aux membres du jury d'évaluer les projets et de conserver l'historique de chaque version. AGPFE offre ainsi une solution pratique et efficace pour la gestion des projets de fin d'études.
 
-## Available Scripts
+# ![Rocket Ship](https://img.icons8.com/ios-filled/30/21a366/rocket.png) Départ: 
 
-In the project directory, you can run:
+Ces instructions vous permettront d'obtenir une copie du projet opérationnel sur votre ordinateur local à des fins de développement et de test.
 
-### `npm start`
+## ![Prerequisites](https://img.icons8.com/glyph-neue/30/21a366/requirements.png) Conditions Préalables: 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Git](https://img.icons8.com/color/30/null/git.png) Git
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![NodeJs](https://img.icons8.com/fluency/30/null/node-js.png) Node.js
 
-### `npm test`
+**Facultatif:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Bash](https://img.icons8.com/color/30/null/command-line.png) Bash
 
-### `npm run build`
+## ![Installation](https://img.icons8.com/external-sbts2018-solid-sbts2018/30/21a366/external-install-basic-ui-elements-2.3-sbts2018-solid-sbts2018.png) Installation: 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Clonez le dépôt:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+git clone https://github.com/yassirelkhaili/Application-de-gestion-des-projets-de-fin-d-tudes-AGPFE-
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2. Accédez au répertoire du projet:
 
-### `npm run eject`
+cd Repo
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 3. Installer les dépendances:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 4. Démarrer le serveur de développement:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+npm start
 
-## Learn More
+Le site sera désormais disponible sur http://localhost:3000.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## ![Built With](https://img.icons8.com/external-basicons-solid-edtgraphics/30/21a366/external-Source-code-files-basicons-solid-edtgraphics-3.png) Développé avec:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### + Frameworks:
 
-### Code Splitting
+![ReactJS](https://img.icons8.com/color/30/null/react-native.png) React - Le framework web utilisé
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![Bootstrap](https://img.icons8.com/color/30/null/bootstrap.png) Bootstrap - pour une conception réactive 
 
-### Analyzing the Bundle Size
+### + Langages:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![HTML5](https://img.icons8.com/color/30/null/html-5--v1.png) HTML5
 
-### Making a Progressive Web App
+![CSS3](https://img.icons8.com/color/30/null/css3.png) CSS3
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+![Javascript](https://img.icons8.com/color/30/null/javascript--v1.png) ES2022
 
-### Advanced Configuration
+![PHP](https://img.icons8.com/offices/30/null/php-logo.png) PHP
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### + Design:
 
-### Deployment
+![Figma](https://img.icons8.com/fluency/30/null/figma.png) Figma
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### + Bibliothèques/Dépendances
 
-### `npm run build` fails to minify
+* Axios
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Bootstrap
+
+* scss
+
+* Icons by <a href="https://icons8.com">Icons8</a>
+
+## ![collaborateurs](https://img.icons8.com/pastel-glyph/30/40C057/groups--v4.png) Collaborateurs: 
+
+### Ilham Aitsaid
+
+### Yassir Elkhaili 
+
+### Imane Tarfi 

@@ -1,29 +1,23 @@
-import React, {useState} from 'react'
-import axios from "axios"
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Contact from "./pages/Contact";
+import { BrowserRouter as Router,Routes, Route} from "react-router-dom";
 
-const App = () => {
-    const [name, setname] = useState()
-    const handleChange = (e) => {
-        setname(prev=>({...prev, [e.target.name]: e.target.value}))
-    }
-    const handleSubmit = async(e) => {
-        e.preventDefault() 
-        try {
-          const data = JSON.stringify(name)
-          await axios.post("http://localhost/backend/controllers/DBConnect.php", data)
-        } catch (err) {
-          console.log(err)
-        }
-    }
+function App() {
   return (
-    <>
-    <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
-        <input id='name' name='name' onChange={handleChange}></input>
-        <button type='submit'>Send</button>
-    </form>
-    </>
-  )
+    <div className="App">
+      <Router>
+        <Navbar />
+       <Routes>
+          <Route path="/"  element={<Home/>} />
+          <Route path="/contact"  element={<Contact/>} />
+        </Routes>
+        <Footer/>
+      </Router>
+    </div>
+  );
 }
 
-export default App
+export default App;
